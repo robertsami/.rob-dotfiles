@@ -1,0 +1,34 @@
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ --ignore .git5_specs
+      \ --ignore review
+      \ -g ""'
+
+colorscheme slate
+syntax on
+
+" map jj to escape
+:imap jj <Esc>
+
+" for moving between panes more quickly
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set splitbelow
+set splitright
+
+set textwidth=109 " wrap line at 109 chars
+set showmatch     " set show matching parenthesis
+set smartcase     " ignore case if search pattern is all lowercase,
+                  " case-sensitive otherwise
+
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
