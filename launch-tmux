@@ -1,17 +1,13 @@
 #!/bin/sh
-#
-# Create 'master' session if it doesn't exist, then create a grouped
-# session and a new window.
+# Attach if exists, else create and attach
 #
 
-NAME=${1:-master}
-tmux has-session -t $NAME
+tmux has-session -t $1
 case $? in
         1)
-                tmux new-session -s $NAME \; detach-client
-                tmux new-session -t $NAME \;
-                ;;
+		tmux new -s $1
+		;;
         0)
-                tmux new-session -t $NAME \;
-                ;;
+		tmux attach -t $1
+		;;
 esac
