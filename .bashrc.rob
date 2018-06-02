@@ -1,0 +1,1 @@
+alias restore="git reset --soft HEAD^ && git reset && git status"
